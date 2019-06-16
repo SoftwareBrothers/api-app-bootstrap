@@ -2,9 +2,9 @@
 
 echo "Setting up env variables"
 set -e
-PROJECT_ID=hapi-api-243910
-KUBERNETES_APP_NAME=hapi-api
+PROJECT_ID=$GOOGLE_PROJECT_ID # set by the CI
 STAGE=$CI_BRANCH
+KUBERNETES_APP_NAME=hapi-api-$STAGE
 
 IMAGE=gcr.io/$PROJECT_ID/hapi-api:$CI_REPO_NAME.$CI_COMMIT_ID
 
