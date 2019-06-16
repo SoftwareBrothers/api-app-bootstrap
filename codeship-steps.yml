@@ -1,7 +1,9 @@
 - type: parallel
-  name: ci
+  name: Tests
   steps:
     - service: application
+      name: Run linter
       command: yarn run lint
     - service: application
-      command: yarn test
+      name: Run tests
+      command: "bash -c 'wait && yarn run test'"
