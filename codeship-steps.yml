@@ -20,4 +20,4 @@
       dockercfg_service: gcr_dockercfg
     - name: deploy
       service: googleclouddeployment
-      command: ls deploy
+      command: ./deploy/infrastructure/k8s/deploy.sh
