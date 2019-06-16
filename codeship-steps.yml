@@ -1,0 +1,7 @@
+- type: parallel
+  name: ci
+  steps:
+    - service: application
+      command: yarn run lint
+    - service: application
+      command: yarn test

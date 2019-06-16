@@ -5,7 +5,7 @@ services:
     restart: always
     build:
       context: ../
-      dockerfile: Dockerfile
+      dockerfile: ./infrastructure/Dockerfile.dev
     ports:
       - "8080:8080"
     links:
@@ -15,7 +15,7 @@ services:
       - ../:/usr/src/app
 
     command: "bash -c 'wait && yarn run start-dev'"
-    env_file: 'api.env'
+    env_file: '.env'
     environment:
       WAIT_HOSTS: mongo:27017
 
@@ -23,11 +23,9 @@ services:
     container_name: mongo
     image: mongo
     volumes:
-      - ./data:/data/db
+      - mongodb:/data/db
     ports:
       - "27017:27017"
 
-  postgres:
-    container_name: postgres
-    image: postgres
-    restart: always
+volumes:
+  mongodb:

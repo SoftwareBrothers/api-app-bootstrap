@@ -1,0 +1,15 @@
+application:
+  build:
+    image: hapi:latest
+    dockerfile: ./infrastructure/Dockerfile
+  environment:
+    MONGO_TEST_URL: mongodb://mongo/hapi-server-test
+    COOKIE_PASSWORD: examplecookiepasswordwhicisquitelong
+    JWT_SECRET: examplejwtsecretfile
+    NODE_ENV: test
+    PORT: 8080
+  depends_on:
+    - mongo
+
+mongo:
+  image: mongo
