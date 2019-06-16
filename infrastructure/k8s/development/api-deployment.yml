@@ -20,7 +20,7 @@ spec:
         component: api
     spec:
       containers:
-        - image: gcr.io/hapi-api-243910/hapi-api:application.f73686e3f8ef1da090f880e75a22f0b11393daa2
+        - image: $IMAGE_NAME
           name: api
           ports:
             - containerPort: 8080
