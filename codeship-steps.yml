@@ -13,10 +13,11 @@
   steps:
     - service: application
       type: push
+      name: push image
       image_name: gcr.io/hapi-api-243910/hapi-api
-      image_tag: "{{.ServiceName}}.{{.CommitID}}"
+      image_tag: "{{.RepoName}}.{{.CommitID}}"
       registry: https://gcr.io
       dockercfg_service: gcr_dockercfg
-    # - name: push-to-registry
-    #   service: googleclouddeployment
-    #   command: ./infrastructure/k8s/deploy.sh
+    - name: deploy
+      service: googleclouddeployment
+      command: ./infrastructure/k8s/deploy.sh

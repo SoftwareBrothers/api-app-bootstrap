@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    name: api
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      component: api
+  template:
+    metadata:
+      labels:
+        component: api
+    spec:
+      containers:
+        - image: gcr.io/hapi-api-243910/hapi-api:application.f73686e3f8ef1da090f880e75a22f0b11393daa2
+          name: api
+          ports:
+            - containerPort: 8080
+              name: api
+          imagePullPolicy: Always
+          command: ["yarn", "start"]
+          env:
+            - name: NODE_ENV
+              value: development
+            - name: PORT
+              value: "8080"
+            - name: MONGO_URL
+              valueFrom:
+                secretKeyRef:
+                  name: api-envs
+                  key: mongo_url
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: api-envs
+                  key: jwt_secret
+            - name: COOKIE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: api-envs
+                  key: cookie_password
+            - name: SWAGGER
+              value: "true"
+            - name: ADMIN
+              value: "true"
