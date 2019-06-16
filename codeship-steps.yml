@@ -20,4 +20,4 @@
       dockercfg_service: gcr_dockercfg
     - name: deploy
       service: googleclouddeployment
-      command: ./deploy/infrastructure/k8s/deploy.sh
+      command: bash -c "chmod +x ./deploy/infrastructure/k8s/deploy.sh && ./deploy/infrastructure/k8s/deploy.sh"

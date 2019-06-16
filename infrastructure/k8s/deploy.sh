@@ -12,3 +12,7 @@ gcloud container clusters get-credentials $KUBERNETES_APP_NAME
 echo $PROJECT_ID
 echo $IMAGE
 echo $KUBERNETES_APP_NAME
+
+
+
+ls
