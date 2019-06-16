@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap#readme",
   "dependencies": {
+    "@google-cloud/debug-agent": "^4.0.0",
+    "@google-cloud/trace-agent": "^4.0.0",
     "admin-bro": "^0.3.0",
     "admin-bro-hapijs": "^0.1.7",
     "admin-bro-mongoose": "^0.1.4",

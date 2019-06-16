@@ -1,4 +1,12 @@
 /* eslint no-console: 'off' */
+const pkg = require('./package.json');
+require('@google-cloud/trace-agent').start();
+require('@google-cloud/debug-agent').start({
+  serviceContext: {
+    service: 'hapi-api',
+    version: pkg.version,
+  },
+});
 
 const server = require('./config/server');
 const database = require('./config/database');
