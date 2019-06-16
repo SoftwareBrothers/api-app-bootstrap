@@ -1,4 +1,4 @@
-- type: parallel
+- type: serial
   name: Tests
   steps:
     - service: application
@@ -6,4 +6,4 @@
       command: yarn run lint
     - service: application
       name: Run tests
-      command: "bash -c 'wait && yarn run test'"
+      command: bash -c 'wait && yarn run test'
