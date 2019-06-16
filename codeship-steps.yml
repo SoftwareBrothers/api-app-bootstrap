@@ -7,3 +7,16 @@
     - service: application
       name: Run tests
       command: bash -c 'wait && yarn run test'
+
+- type: serial
+  name: deploy
+  steps:
+    - service: application
+      type: push
+      image_name: gcr.io/hapi-api-243910/hapi-api
+      image_tag: "{{.ServiceName}}.{{.CommitID}}"
+      registry: https://gcr.io
+      dockercfg_service: gcr_dockercfg
+    # - name: push-to-registry
+    #   service: googleclouddeployment
+    #   command: ./infrastructure/k8s/deploy.sh
