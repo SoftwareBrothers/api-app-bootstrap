@@ -29,7 +29,7 @@ But you can also create cluster in the gcloud web console and then authenticate 
 In order to authenticate to gcloud from codeship you have to create Service Account in gcloud: https://console.cloud.google.com/iam-admin/serviceaccounts
 
 add role:
-- Kubernetes Engine Cluster Admin
+- Kubernetes Engine Admin
 - Storage Admin
 
 Then download json KEY and encrypt it as it was described in this tutorial: https://documentation.codeship.com/pro/continuous-deployment/google-cloud/

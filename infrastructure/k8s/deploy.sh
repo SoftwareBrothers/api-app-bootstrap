@@ -20,3 +20,5 @@ echo "Deploying to Kubernetes..."
 kubectl apply -f ./deploy/infrastructure/k8s/$STAGE
 
 echo "Image $IMAGE was deployed"
+
+printenv
