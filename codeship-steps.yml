@@ -20,4 +20,4 @@
       dockercfg_service: gcr_dockercfg
     - name: deploy
       service: googleclouddeployment
-      command: deploy.sh
+      command: ls
