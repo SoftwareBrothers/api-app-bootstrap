@@ -42,7 +42,7 @@ spec:
             periodSeconds: 5
           env:
             - name: NODE_ENV
-              value: production
+              value: development
             - name: PORT
               value: "8080"
             - name: MONGO_URL
@@ -63,16 +63,4 @@ spec:
             - name: SWAGGER
               value: "true"
             - name: ADMIN
-              value: "true"
-            - name: NEW_RELIC_APP_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: api-envs
-                  key: new_relic_app_name
-            - name: NEW_RELIC_LICENSE_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: api-envs
-                  key: new_relic_license_key
-            - name: NEW_RELIC_NO_CONFIG_FILE
               value: "true"
