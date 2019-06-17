@@ -59,3 +59,7 @@ yarn run lint
 ## Swagger API docs
 
 After running the app generated documentation is available under `http://localhost:8080/documentation`. To document new routes take a look hapi-swagger pacakge: https://github.com/glennjones/hapi-swagger or check any existing routes.
+
+## Deployment
+
+Application can be deployed on Kubernetes by using [Codeship](codeship.io) as a Continuous Delivery system. There is a separate documentation which can be found here: [kubernetes deployment](infrastructure/k8s/README.md) where you can find information on how to set this up.
