@@ -63,3 +63,16 @@ After running the app generated documentation is available under `http://localho
 ## Deployment
 
 Application can be deployed on Kubernetes by using [Codeship](codeship.io) as a Continuous Delivery system. There is a separate documentation which can be found here: [kubernetes deployment](infrastructure/k8s/README.md) where you can find information on how to set this up.
+
+## License
+
+AdminBro is Copyright © 2018 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.md) file.
+
+## About SoftwareBrothers.co
+
+<img src="https://softwarebrothers.co/assets/images/software-brothers-logo-full.svg" width=240>
+
+We’re an open, friendly team that helps clients from all over the world to transform their businesses and create astonishing products.
+
+* We are available for [hire](https://softwarebrothers.co/contact).
+* If you want to work for us - checkout the [career page](https://softwarebrothers.co/career).

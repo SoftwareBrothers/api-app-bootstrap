@@ -1,5 +1,4 @@
 /* eslint no-console: 'off' */
-require('newrelic');
 const server = require('./config/server');
 const database = require('./config/database');
 
