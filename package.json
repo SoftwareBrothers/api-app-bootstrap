@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap#readme",
   "dependencies": {
-    "admin-bro": "^0.9.0-beta.5",
-    "admin-bro-hapijs": "^0.1.7",
+    "admin-bro": "^0.9.0",
+    "admin-bro-hapijs": "^0.2.0",
     "admin-bro-mongoose": "^0.1.4",
     "bcrypt": "^3.0.0",
     "boom": "^7.3.0",
