@@ -845,10 +845,11 @@ admin-bro-hapijs@^0.2.0:
     hapi-auth-cookie "^9.1.0"
     inert "^5.1.2"
 
-admin-bro-mongoose@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/admin-bro-mongoose/-/admin-bro-mongoose-0.1.4.tgz#d0725caa3fc49236dff8e8a810f75e6917b95001"
+admin-bro-mongoose@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/admin-bro-mongoose/-/admin-bro-mongoose-0.2.2.tgz#117eaafd87cab9b6918be4c6307535ca72332bd5"
   dependencies:
+    escape-regexp "0.0.1"
     lodash "^4.17.11"
 
 admin-bro@^0.9.0:
@@ -1912,6 +1913,10 @@ es6-promise@^3.0.2:
 es6-promise@^4.1.1:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.5.tgz#da6d0d5692efb461e082c14817fe2427d8f5d054"
+
+escape-regexp@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/escape-regexp/-/escape-regexp-0.0.1.tgz#f44bda12d45bbdf9cb7f862ee7e4827b3dd32254"
 
 escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5, escape-string-regexp@~1.0.5:
   version "1.0.5"
