@@ -24,7 +24,7 @@ But you can also create cluster in the gcloud web console and then authenticate 
 
 `gcloud container clusters get-credentials <cluster-name>`
 
-Cluster should have the ending `-STAGE` where stage is one of: master, staging, development - thus it will be easier to configure deployment (see `infrastructure/k8s/deploy.rb` file)
+Cluster should have the ending `-STAGE` where stage is one of: master, staging, development - thus it will be easier to configure deployment (see `infrastructure/k8s/deploy.sh` file)
 
 ## Setup env variables on your claster
 
@@ -54,7 +54,16 @@ add role:
 
 Then download json KEY and encrypt it as it was described in this tutorial: https://documentation.codeship.com/pro/continuous-deployment/google-cloud/
 
-Finally you have to recreate `google-credentials.encrypted` file (read the tutorial above)
+You have to recreate `google-credentials.encrypted` file (read the tutorial above)
+
+In `infrastructure/k8s/deploy.sh` change CLUSTER_NAME:
+```
+KUBERNETES_APP_NAME=CLUSTER_NAME-$STAGE
+
+eg. if your cluster name is hapi-api-develop, your CLUSTER_NAME is hapi-api
+```
+
+In `codeship-steps.yml` change PROJECT_ID from GCP
 
 Project have one deploy script which is under: `infrastructure/k8s/deploy.sh` - adjust it to your needs.
 
