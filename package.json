@@ -4,11 +4,10 @@
   "description": "API bootstrap app using hapijs and mongoose with JWT auth",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./spec",
+    "test": "mocha ./spec",
     "start": "node index.js",
-    "start-dev": "./node_modules/nodemon/bin/nodemon.js index.js",
-    "lint": "./node_modules/eslint/bin/eslint.js './spec/**' './config/**' './src/**'",
-    "docs": "node_modules/.bin/jsdoc -c jsdoc.json --readme README.md",
+    "start-dev": "nodemon index.js",
+    "lint": "eslint './spec/**' './config/**' './src/**'",
     "cover": "NODE_ENV=test ./node_modules/nyc/bin/nyc.js"
   },
   "repository": {
@@ -28,9 +27,9 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap#readme",
   "dependencies": {
-    "admin-bro": "^0.3.0",
-    "admin-bro-hapijs": "^0.1.7",
-    "admin-bro-mongoose": "^0.1.4",
+    "admin-bro": "^0.9.0",
+    "admin-bro-hapijs": "^0.2.0",
+    "admin-bro-mongoose": "^0.2.2",
     "bcrypt": "^3.0.0",
     "boom": "^7.3.0",
     "hapi": "^17.5.3",

@@ -1,0 +1,31 @@
+application:
+  build:
+    image: hapi:latest
+    dockerfile: ./infrastructure/Dockerfile
+  cached: true
+  environment:
+    MONGO_TEST_URL: mongodb://mongo/hapi-server-test
+    COOKIE_PASSWORD: examplecookiepasswordwhicisquitelong
+    JWT_SECRET: examplejwtsecretfile
+    NODE_ENV: test
+    PORT: 8080
+  depends_on:
+    - mongo
+
+mongo:
+  container_name: mongo
+  image: mongo
+  cached: true
+
+# Following 2 services are taken from https://documentation.codeship.com/pro/continuous-deployment/google-container/
+gcr_dockercfg:
+  image: codeship/gcr-dockercfg-generator
+  add_docker: true
+  encrypted_env_file: google-credentials.encrypted
+
+googleclouddeployment:
+  image: codeship/google-cloud-deployment
+  encrypted_env_file: google-credentials.encrypted
+  add_docker: true
+  volumes:
+    - ./:/deploy

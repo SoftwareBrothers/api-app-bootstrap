@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'test';
-process.env.MONGO_URL = 'mongodb://mongo/hapi-server-test';
+process.env.MONGO_URL = process.env.MONGO_TEST_URL || 'mongodb://mongo/hapi-server-test';
 
 const chai = require('chai');
 const sinonChai = require('sinon-chai');

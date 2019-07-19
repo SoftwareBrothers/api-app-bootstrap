@@ -1,0 +1,24 @@
+- type: serial
+  name: Tests
+  steps:
+    - service: application
+      name: Run linter
+      command: yarn run lint
+    - service: application
+      name: Run tests
+      command: bash -c 'wait && yarn run test'
+
+- type: serial
+  name: deploy
+  tag: ^(master|staging|development)
+  steps:
+    - service: application
+      type: push
+      name: push image
+      image_name: gcr.io/hapi-api-243910/hapi-api
+      image_tag: "{{.RepoName}}.{{.CommitID}}"
+      registry: https://gcr.io
+      dockercfg_service: gcr_dockercfg
+    - name: deploy
+      service: googleclouddeployment
+      command: bash -c "chmod +x ./deploy/infrastructure/k8s/deploy.sh && ./deploy/infrastructure/k8s/deploy.sh"

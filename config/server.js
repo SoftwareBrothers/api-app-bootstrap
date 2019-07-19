@@ -6,7 +6,6 @@ const Hapi = require('hapi');
 const Boom = require('boom');
 const auth = require('./auth');
 const swagger = require('./swagger');
-const jsdoc = require('./jsdoc');
 const admin = require('./admin');
 
 const routes = require('../src/routes');
@@ -31,10 +30,6 @@ module.exports.start = async (database) => {
 
   if (process.env.ADMIN === 'true') {
     await admin.register(server, database);
-  }
-
-  if (process.env.JSDOC === 'true') {
-    await jsdoc.register(server);
   }
 
   for (const route in routes) {

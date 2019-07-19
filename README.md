@@ -1,4 +1,4 @@
-# HottCoffee API
+# APP-BOOTSTRAP
 
 ## What is this app about?
 
@@ -9,7 +9,6 @@ The app has following features:
 - database configuration,
 - eslint linter configuration,
 - API documentation generator using swagger,
-- documentation generator using jsdoc,
 - authentication routes and auth logic with JWT
 
 Using this repo as a start for new app should save you couple of days of development.
@@ -26,7 +25,6 @@ Application contains following folders:
 - ./src/controllers - controllers
 - ./src/models - mongoose models with schemas
 - ./src/routes - api routes
-- ./tutorials - standalone tutorial files used by jsdoc
 
 ## Automated tests with coverage
 
@@ -35,17 +33,17 @@ As mentioned above application uses mocha along with chai.expect syntax. All tes
 To run tests:
 ```
 # simply run automated tests
-npm test
+yarn test
 
 # or get coverage report
-npm run cover
+yarn run cover
 ```
 
 ## Database
 
 Application uses mongodb as a persistent data store. ORM is mongoose.
 
-MongoDB container is configured under `./infrastructure/docker-compose.yml`. All data from the container is linked with `/infrastructure/data` folder.
+MongoDB container is configured under `./infrastructure/docker-compose.yml`.
 
 Simple configuration file for the database can be found here: `./config/database.js`
 
@@ -55,26 +53,26 @@ Project has eslint configuration file under `./eslintrc.js`. To run linter again
 
 ```
 # within the container
-npm run lint
+yarn run lint
 ```
 
 ## Swagger API docs
 
 After running the app generated documentation is available under `http://localhost:8080/documentation`. To document new routes take a look hapi-swagger pacakge: https://github.com/glennjones/hapi-swagger or check any existing routes.
 
-## JSDoc
+## Deployment
 
-Project allows you to generate documentation based on inline comments using JSDoc. In order to generate it run:
+Application can be deployed on Kubernetes by using [Codeship](codeship.io) as a Continuous Delivery system. There is a separate documentation which can be found here: [kubernetes deployment](infrastructure/k8s/README.md) where you can find information on how to set this up.
 
-```
-npm run docs
-```
+## License
 
-within the app container.
+AdminBro is Copyright © 2018 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.md) file.
 
-It will create and populate `./docs` folder with documentation files.
-Also if you set `JSDOC` env to `true` entire documentation will be served by the app and available under `http://localhost:8080/code`
+## About SoftwareBrothers.co
 
-## Clients
+<img src="https://softwarebrothers.co/assets/images/software-brothers-logo-full.svg" width=240>
 
-Wonder how to connect with the API from the frontend app? There is a simple client application written in ReactNative. Take a look at it here: https://github.com/SoftwareBrothers/react-native-hapijs-client
+We’re an open, friendly team that helps clients from all over the world to transform their businesses and create astonishing products.
+
+* We are available for [hire](https://softwarebrothers.co/contact).
+* If you want to work for us - checkout the [career page](https://softwarebrothers.co/career).
