@@ -39,7 +39,7 @@
     "inert": "^5.1.0",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.9",
+    "mongoose": "^5.7.5",
     "pack": "^2.1.0",
     "require.all": "^2.0.4",
     "vision": "^5.3.3"
